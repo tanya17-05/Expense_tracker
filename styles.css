@@ -10,9 +10,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-html {
+*::-webkit-scrollbar {
+  display: none;
+}
+
+htmxl {
   font-family: "Poppins", sans-serif;
 }
 
@@ -29,11 +35,11 @@ body {
 .box {
   background-color: white;
   width: 450px;
-  height: 850px;
+  height: 100%;
   padding: 20px;
   background-color: var(--primary-dark);
   color: white;
-  position: absolute;
+  position: relative;
 }
 p {
   font-size: 14px;
@@ -64,9 +70,20 @@ h3 {
 
 .transaction_container {
   margin-top: 20px;
+  position: relative;
+}
+
+.absolute-container {
+  position: absolute;
+  height: 295px ;
+  width: 100%;
+  overflow: auto;
 }
 
 .transactions {
+  position: relative;
+  height: 100%;
+  width: 100%;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -115,7 +132,8 @@ h3 {
 
 .transaction_form {
   background-color: white;
-  position: absolute;
+  position: sticky;
+  margin-top: 78%;
   bottom: 0;
   left: 0;
   width: 100%;
